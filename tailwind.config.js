@@ -9,8 +9,9 @@
 //   },
 //   plugins: [],
 // }
-
+const flowbite = require("flowbite-react/tailwind");
 const withMT = require("@material-tailwind/react/utils/withMT");
+
  
 module.exports = withMT({
   content: [
@@ -18,11 +19,12 @@ module.exports = withMT({
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
     "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+    flowbite.content(),
   ],
   theme: {
     extend: {},
   },
   plugins: [
-    require('daisyui'),
+    require('daisyui'),require('flowbite/plugin')
   ],
 });

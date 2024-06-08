@@ -1,6 +1,6 @@
 
 import { Outlet } from 'react-router-dom';
-import MenuBar from '../pages/shared/MenuBar';
+import NavMenu from '../pages/shared/NavMenu';
 
 
 
@@ -9,7 +9,7 @@ import MenuBar from '../pages/shared/MenuBar';
 const Root = () => {
     return (
         <div>
-       <MenuBar></MenuBar>
+            <NavMenu></NavMenu>    
             <div className='max-w-7xl mx-auto'>
             <Outlet></Outlet>
             </div>
