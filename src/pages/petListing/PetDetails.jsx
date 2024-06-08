@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import {
     Card,
     CardHeader,
@@ -9,7 +9,7 @@ import {
 const PetDetails = () => {
     const pet = useLoaderData();
     console.log(pet);
-    const { petImage, petName,petCategory, petAge, petLocation,shortDescription, longDescription } = pet;
+    const { petImage, petName,petCategory, petAge, petLocation,shortDescription, longDescription,_id } = pet;
     return (
         <div className="flex justify-center my-10 h-svh ">  
           <Card className="w-1/2">
@@ -36,8 +36,10 @@ const PetDetails = () => {
                     <span className="font-bold">Long Description: </span> {longDescription}
                     </Typography>
                 </CardBody>
-                <div className='flex justify-center items-center mb-5 mx-10'>
-                    <button className='w-full px-2 py-2 bg-green-400 rounded-lg text-white '>Adopt</button></div>
+                <Link to={`/createAdopt/${_id}`}> <div className='flex justify-center items-center mb-5 mx-10'>
+                    <button className='w-full px-2 py-2 bg-green-400 rounded-lg text-white '>Adopt</button>
+                    
+                    </div></Link>
             </Card>
         </div>
     );

@@ -12,7 +12,7 @@ const Dashboard = () => {
                 <ul className="menu p-4">
                     <li><NavLink to='/dashboard/addPet'> Add a pet</NavLink></li>
                     <li><NavLink to='/dashboard/myAddedPets'> My added pets</NavLink></li>
-                    <li><NavLink to='/dashboard/AdoptionRequest'> Adoption Request</NavLink></li>
+                    <li><NavLink to='/dashboard/adoptionRequest'> Adoption Request</NavLink></li>
                     <li><NavLink to='/dashboard/CreateDonationCampaign'> Create Donation Campaign </NavLink></li>
                     <li><NavLink to='/dashboard/myDonationCampaigns'> My Donation Campaigns </NavLink></li>
                     <li><NavLink to='/dashboard/myDonations'> My Donations</NavLink></li>

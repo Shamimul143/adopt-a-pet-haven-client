@@ -7,7 +7,7 @@ import SocialLogin from '../../components/socialLogin/SocialLogin';
 const Login = () => {
 
     // const [disabled, setDisabled] = useState(true);
-    const { signIn } = useAuth
+    const { signIn } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 

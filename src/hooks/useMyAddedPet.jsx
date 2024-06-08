@@ -10,7 +10,7 @@ const useMyAddedPet = () => {
     const { refetch, data: myAddedPet = [] } = useQuery({
         queryKey: ['myAddedPet', user?.email],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/useMyAddedPet/${user?.email}`)
+            const res = await axiosSecure.get(`/adoption/${user?.email}`)
             return res.data
         }
     })

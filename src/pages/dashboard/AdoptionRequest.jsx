@@ -23,6 +23,7 @@ const [adoptionStatus, setAdoptionStatus]=useState();
                         <th>Pet category</th>
                         <th>Name</th>
                         <th>Email</th>                      
+                        <th>Phone Number</th>                      
                         <th>Adoption Status</th>
                     </tr>
                 </thead>
@@ -45,6 +46,7 @@ const [adoptionStatus, setAdoptionStatus]=useState();
                             <td>{item.petCategory}</td>                        
                             <td>{item.name}</td>                        
                             <td>{item.email}</td>                                              
+                            <td>{item.phoneNumber}</td>                                              
                             <th><button onClick={() => setAdoptionStatus(!adoptionStatus)}  className="bg-green-300 px-4 py-2 rounded-lg">{adoptionStatus ? "Reject" : "Accept"}</button></th>                      
 
                         </tr>

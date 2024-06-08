@@ -39,7 +39,7 @@ const NavMenu = () => {
 
                         </Dropdown.Header>
                         <Dropdown.Divider />
-                        <Dropdown.Item><Link to='/dashboard'>Dashboard</Link></Dropdown.Item>
+                        <Dropdown.Item>{user && <Link to='/dashboard'>Dashboard</Link>}</Dropdown.Item>
                         <Dropdown.Item onClick={handleLogOut}>Sign out</Dropdown.Item>
                     </Dropdown>
                     <Navbar.Toggle />

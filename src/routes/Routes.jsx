@@ -20,6 +20,7 @@ import AllPets from "../pages/dashboard/AllPets";
 import AllDonations from "../pages/dashboard/AllDonations";
 import DonationCampaignsPage from "../pages/donationCampaignsPage/DonationCampaignsPage";
 import PetDetails from "../pages/petListing/PetDetails";
+import CreateAdopt from "../pages/petListing/CreateAdopt";
 
 
 
@@ -51,6 +52,11 @@ export const router = createBrowserRouter([
             {
                 path: "/petDeteils/:id",
                 element: <PetDetails></PetDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/pets/${params.id}`)
+            },
+            {
+                path: "/createAdopt/:id",
+                element: <CreateAdopt></CreateAdopt>,
                 loader: ({ params }) => fetch(`http://localhost:5000/pets/${params.id}`)
             },
             {
@@ -103,7 +109,7 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute><MyDonations></MyDonations></PrivateRoute>,
             },
             {
-                path: 'AdoptionRequest',
+                path: 'adoptionRequest',
                 element: <PrivateRoute><AdoptionRequest></AdoptionRequest></PrivateRoute>,
             },
             {
