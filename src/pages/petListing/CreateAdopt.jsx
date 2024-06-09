@@ -37,6 +37,7 @@ const CreateAdopt = () => {
                 adopted: data.adopted,
                 phoneNumber: data.phoneNumber,
                 address: data.address,
+                status:'panding',
                 email: user.email,
                 name: user.displayName,
                 userimage: user.photoURL

@@ -22,7 +22,6 @@ import DonationCampaignsPage from "../pages/donationCampaignsPage/DonationCampai
 import PetDetails from "../pages/petListing/PetDetails";
 import CreateAdopt from "../pages/petListing/CreateAdopt";
 import DonationDetails from "../pages/donationCampaignsPage/DonationDetails";
-import DonatesNow from "../pages/donationCampaignsPage/DonatesNow";
 import Payment from "../pages/donationCampaignsPage/Payment";
 import PatmentHistory from "../pages/donationCampaignsPage/PatmentHistory";
 
@@ -71,11 +70,7 @@ export const router = createBrowserRouter([
                 path: "/donationDetails/:id",
                 element: <DonationDetails></DonationDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/donations/${params.id}`)             
-            },
-            {
-                path: "/donatesNow/:id",
-                element: <DonatesNow></DonatesNow>,                           
-            },
+            },           
             {
                 path: "/payment/:id",
                 element: <Payment></Payment>,

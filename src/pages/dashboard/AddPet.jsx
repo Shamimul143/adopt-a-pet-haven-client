@@ -37,7 +37,7 @@ const AddPet = () => {
                 adoptDateTime: data.adoptDateTime,
                 adopted: data.adopted,
                 shortDescription: data.shortDescription,
-                longDescription: data.newContent,
+                longDescription: data.content.value,
                 email: user.email,
                 name: user.displayName,
                 userimage: user.photoURL

@@ -1,14 +1,24 @@
 
 import { useState } from "react";
 import useMyAddedPet from "../../hooks/useMyAddedPet";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
 
 const AdoptionRequest = () => {
-    const [myAddedPet] = useMyAddedPet();  
-const [adoptionStatus, setAdoptionStatus]=useState();
+    const [myAddedPet] = useMyAddedPet();
+    // const [adoptionStatus, setAdoptionStatus]=useState();
+    const axiosPablic = useAxiosPublic();
 
-    
+    const handleStatus = (item) => {
+        console.log(item);
+        item.status = "aprove"
+        const res = axiosPablic.patch('/adoptions/',item)
+        console.log(res.data);
+    }
+
+
+
     return (
         <div className="overflow-x-scroll overflow-y-scroll h-svh sm:w-[300px] md:w-[700px] lg:w-full">
             <table className="table w-full">
@@ -22,8 +32,8 @@ const [adoptionStatus, setAdoptionStatus]=useState();
                         <th>Pet name</th>
                         <th>Pet category</th>
                         <th>Name</th>
-                        <th>Email</th>                      
-                        <th>Phone Number</th>                      
+                        <th>Email</th>
+                        <th>Phone Number</th>
                         <th>Adoption Status</th>
                     </tr>
                 </thead>
@@ -43,11 +53,21 @@ const [adoptionStatus, setAdoptionStatus]=useState();
                                 </div>
                             </td>
                             <td>{item.petName}</td>
-                            <td>{item.petCategory}</td>                        
-                            <td>{item.name}</td>                        
-                            <td>{item.email}</td>                                              
-                            <td>{item.phoneNumber}</td>                                              
-                            <th><button onClick={() => setAdoptionStatus(!adoptionStatus)}  className="bg-green-300 px-4 py-2 rounded-lg">{adoptionStatus ? "Reject" : "Accept"}</button></th>                      
+                            <td>{item.petCategory}</td>
+                            <td>{item.name}</td>
+                            <td>{item.email}</td>
+                            <td>{item.phoneNumber}</td>
+                            <th>
+                                <div>
+                                    {
+                                        item.status === 'Panding' ?
+                                            <button>Rejected</button> :
+                                            <button onClick={() => handleStatus(item)} >Approved</button>
+                                    }
+
+
+                                </div>
+                            </th>
 
                         </tr>
                         )
