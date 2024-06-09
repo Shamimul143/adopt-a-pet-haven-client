@@ -16,6 +16,7 @@ const Dashboard = () => {
                     <li><NavLink to='/dashboard/CreateDonationCampaign'> Create Donation Campaign </NavLink></li>
                     <li><NavLink to='/dashboard/myDonationCampaigns'> My Donation Campaigns </NavLink></li>
                     <li><NavLink to='/dashboard/myDonations'> My Donations</NavLink></li>
+                    <li><NavLink to='/dashboard/patmentHistory'> Payment History</NavLink></li>
 
                     <div className="divider"></div>
                     {/* sheired nav link */}

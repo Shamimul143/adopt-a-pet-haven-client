@@ -5,6 +5,7 @@ import {
     Typography
 } from "@material-tailwind/react";
 import useAllDonations from "../../hooks/useAllDonations";
+import { Link } from "react-router-dom";
 
 const DonationCampaignsPage = () => {
     const [allDonations] = useAllDonations()
@@ -25,7 +26,8 @@ const DonationCampaignsPage = () => {
                         </Typography>
 
                     </CardBody>
-                    <div className='flex justify-center items-center mb-5 mx-10'><button className='w-full px-2 py-2 bg-green-400 rounded-lg text-white '> view details</button></div>
+                    <Link to={`/donationDetails/${item._id}`}><div className='flex justify-center items-center mb-5 mx-10'><button className='w-full px-2 py-2 bg-green-400 rounded-lg text-white '> view details</button></div></Link>
+                    
                 </Card>
             </>)}
         </div>
