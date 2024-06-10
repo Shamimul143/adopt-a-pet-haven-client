@@ -103,8 +103,8 @@ const navigate =useNavigate();
 
     return (
         <form onSubmit={handleSubmit}>
-            <p>please pay : <span className="text-2xl font-bold">Mastercard (debit)</span>  <span className="text-2xl font-bold">and 6 digite amount</span></p>
-            <input type="text" name="donationAmountTaka" placeholder="amount" id="" />
+            <p>Please Pay : <span className="text-2xl font-bold">6 Digite Donation Amount</span> and <span className="text-2xl font-bold">Mastercard (debit)</span></p>
+            <input className="my-5" type="text" name="donationAmountTaka" placeholder="Donation Amount" id="" />
             <CardElement
                 options={{
                     style: {
@@ -121,7 +121,7 @@ const navigate =useNavigate();
                     },
                 }}
             />
-            <button className="bg-green-400 py-2 px-4" type="submit" disabled={!stripe}>
+            <button className="bg-green-400 py-2 px-4 my-5 text-black rounded-lg" type="submit" disabled={!stripe}>
                 Pay
             </button>
             <p className="text-red-400">{error}</p>

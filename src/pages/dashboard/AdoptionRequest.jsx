@@ -1,20 +1,36 @@
 
-import { useState } from "react";
+
 import useMyAddedPet from "../../hooks/useMyAddedPet";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
 
 const AdoptionRequest = () => {
-    const [myAddedPet] = useMyAddedPet();
+    const [myAddedPet, refetch] = useMyAddedPet();
     // const [adoptionStatus, setAdoptionStatus]=useState();
     const axiosPablic = useAxiosPublic();
 
     const handleStatus = (item) => {
-        console.log(item);
         item.status = "aprove"
-        const res = axiosPablic.patch('/adoptions/',item)
-        console.log(res.data);
+        axiosPablic.patch(`/adoptions/${item._id}`, item)
+            .then(res => {
+                if (res.data.modifiedCount > 0 || res.data.modifiedCount == undefined) {
+                    refetch()
+                }
+
+            })
+
+
+    }
+    const handleStatus2 = async (item) => {
+
+        item.status = "panding"
+        const res = await axiosPablic.patch(`/adoptions/${item._id}`, item)
+        if (res.data.modifiedCount > 0) {
+            refetch()
+        }
+
+
     }
 
 
@@ -57,12 +73,14 @@ const AdoptionRequest = () => {
                             <td>{item.name}</td>
                             <td>{item.email}</td>
                             <td>{item.phoneNumber}</td>
+                            <td>{item.status}</td>
                             <th>
                                 <div>
                                     {
-                                        item.status === 'Panding' ?
-                                            <button>Rejected</button> :
-                                            <button onClick={() => handleStatus(item)} >Approved</button>
+                                        item.status === 'panding' ?
+
+                                            <button onClick={() => handleStatus(item)} className="bg-green-400 py-2 px-4 rounded-lg" >Approved</button> :
+                                            <button onClick={() => handleStatus2(item)} className="bg-green-400 py-2 px-4 rounded-lg">Rejected</button>
                                     }
 
 

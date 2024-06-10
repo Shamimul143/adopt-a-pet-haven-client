@@ -1,3 +1,4 @@
+import Footar from "../Footar";
 import AboutUs from "../aboutUs/AboutUs";
 import Action from "../action/Action";
 import Banner from "../banner/Banner";
@@ -13,6 +14,7 @@ const Home = () => {
             <Category></Category>
             <Action></Action>
             <AboutUs></AboutUs>
+            <Footar></Footar>
         </div>
 
 
