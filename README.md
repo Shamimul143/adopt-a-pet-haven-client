@@ -6,3 +6,7 @@ npm Package:
 1. sweetalert2
 2. swiperjs
 
+
+Bullet Points
+
+Responsive & Mobile-Friendly Design
