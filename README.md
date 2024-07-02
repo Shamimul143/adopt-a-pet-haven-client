@@ -22,5 +22,5 @@ npm Package:
 
 Bullet Points
 
-Responsive & Mobile-Friendly Design
+1. Responsive & Mobile-Friendly Design
 
